@@ -4,9 +4,10 @@ import CategoriesScreen from './screens/CategoriesScreen';
 
 export default function App() {
   return (
-    <View style={styles.container}>
+    <>
+      <StatusBar backgroundColor = "#b3e6ff"   bar-style='auto' />
       <CategoriesScreen/>
-    </View>
+    </>
   );
 }
 
