@@ -17,4 +17,5 @@ added new dependencies using
    npm install @react-navigation/native
    npx expo install react-native-safe-area-context
    npx expo install react-native-screens
+   npm install @react-navigation/native-stack
 ```
