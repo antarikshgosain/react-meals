@@ -1,6 +1,7 @@
 
 import { MEALS } from "../data/dummy-data";
-import { View, Text, StyleSheet} from 'react-native'
+import { View, Text, StyleSheet, FlatList, } from 'react-native'
+import MealItem from "../components/MealItem";
 
 
 function MealsOverviewScreen({ navigation, route }){
@@ -9,14 +10,21 @@ function MealsOverviewScreen({ navigation, route }){
     const categoryColor = route.params.categoryColor;
     const categoryTitle = route.params.categoryTitle;
 
+    const displayedMeals = MEALS.filter( (mealItem) => {
+        return mealItem.categoryIds.indexOf(categoryId) >= 0 ;
+    } );
+
+    function renderMealItem(itemData) {
+        return (
+            <MealItem title={itemData.item.title}></MealItem>
+        )
+    }
+
     return (
         <View style={styles.container}>
-            <Text>{categoryId}</Text>
-            <Text>{categoryTitle}</Text>
-            <Text>{categoryColor}</Text>
-            <Text>{categoryColor}</Text>
-            <Text>{categoryColor}</Text>
-            
+            <FlatList data={displayedMeals} keyExtractor={(item) => item.id} renderItem={renderMealItem}>
+                
+            </FlatList>
         </View>
     )
 }
