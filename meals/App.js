@@ -12,9 +12,9 @@ export default function App() {
     <>
       <StatusBar bar-style='light' />
       <NavigationContainer>
-        <Stack.Navigator>
-          <Stack.Screen name="Meals Categories" component={CategoriesScreen} />
-          <Stack.Screen name="Meals Overview" component={MealsOverviewScreen} />
+        <Stack.Navigator >
+          <Stack.Screen name="MealsCategories" component={CategoriesScreen} />
+          <Stack.Screen name="MealsOverview" component={MealsOverviewScreen} />
         </Stack.Navigator>
 
         {/* Note needed here because component is provided in Stack.screen */}

@@ -10,7 +10,11 @@ import MealsOverviewScreen from "./MealsOverviewScreen";
 function CategoriesScreen({navigation}) {
     function renderCategoryItem(itemData) {
         function pressHandler() {
-            navigation.navigate('Meals Overview');
+            navigation.navigate('MealsOverview', { 
+                categoryId: itemData.item.id, 
+                categoryTitle: itemData.item.title, 
+                categoryColor: itemData.item.color 
+            } );
         }
         return (
             <CategoryGridTile title={itemData.item.title} color={itemData.item.color} onPress={pressHandler}>

@@ -1,11 +1,22 @@
+
 import { MEALS } from "../data/dummy-data";
 import { View, Text, StyleSheet} from 'react-native'
 
 
-function MealsOverviewScreen(){
+function MealsOverviewScreen({ navigation, route }){
+
+    const categoryId = route.params.categoryId;
+    const categoryColor = route.params.categoryColor;
+    const categoryTitle = route.params.categoryTitle;
+
     return (
         <View style={styles.container}>
-            <Text>Meal 1</Text>
+            <Text>{categoryId}</Text>
+            <Text>{categoryTitle}</Text>
+            <Text>{categoryColor}</Text>
+            <Text>{categoryColor}</Text>
+            <Text>{categoryColor}</Text>
+            
         </View>
     )
 }
