@@ -1,11 +1,12 @@
 import { View, Text, StyleSheet, Image, Pressable, FlatList, Platform } from 'react-native'
 import { useNavigation } from '@react-navigation/native';
+import MealDetails from './MealDetails';
 
-function MealItem( {title, imageUrl, duration, complexity, affordability} ) {
+function MealItem( {id, title, imageUrl, duration, complexity, affordability} ) {
     const navigation = useNavigation();
     function selectedMealItemHandler() {
         navigation.navigate('MealDetailsScreen',{
-            mealTitle: title, 
+            mealId: id, 
         })
     }
     return (
@@ -16,11 +17,8 @@ function MealItem( {title, imageUrl, duration, complexity, affordability} ) {
                         <Image source={{ uri: imageUrl }} style={styles.image} />
                         
                         <Text style={styles.title}> {title} </Text>
-                        <View style={styles.details}>
-                            <Text style={styles.detailItem} > {duration} minutes</Text>
-                            <Text style={styles.detailItem} > {complexity.toUpperCase()} </Text>
-                            <Text style={styles.detailItem} > {affordability.toUpperCase()} </Text>
-                        </View>
+                        
+                        <MealDetails duration={duration} complexity={complexity} affordability={affordability}></MealDetails>
                     </View>
                 </View>
             </Pressable>
@@ -63,14 +61,5 @@ const styles = StyleSheet.create({
         fontSize: 20,
         margin: 8,
     },
-    details: {
-        flexDirection: 'row',
-        alignItems: 'center',
-        justifyContent: 'center',
-        padding: 8
-    },
-    detailItem: {
-        marginHorizontal: 4,
-        fontSize: 16
-    }
+
 });
