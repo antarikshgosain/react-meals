@@ -10,7 +10,7 @@ function MealDetailsScreen({route}) {
     
     return (
         <ScrollView>
-        <View>
+        <View style={styles.rootContainer}>
             <Image style={styles.image} source={{uri: selectedMeal.imageUrl}}/>
             <Text style={styles.title}>{selectedMeal.title}</Text>
             <MealDetails duration={selectedMeal.duration} complexity={selectedMeal.complexity} affordability={selectedMeal.affordability}
@@ -58,17 +58,21 @@ const styles = StyleSheet.create({
         
     },
     subtitleContainer: {
-        marginVertical: 4,
-        marginHorizontal: 8,
-        paddingVertical: 2,
-        paddingHorizontal: 8, 
+        marginVertical: 12,
+        marginHorizontal: 18,
+        paddingVertical: 4,
+        paddingHorizontal: 12, 
         borderWidth: 2,
         borderColor: 'white',
         borderRadius: 4,
+        backgroundColor: '#d1894e'
     },
     listedText: {
         marginTop: 4,
         color: 'white',
         fontSize: 16
+    },
+    rootContainer: {
+        marginBottom: 60
     }
 });
