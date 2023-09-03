@@ -1,6 +1,6 @@
 import { useEffect, useLayoutEffect } from "react";
 import { CATEGORIES, MEALS } from "../data/dummy-data";
-import { View, Text, StyleSheet, FlatList, } from 'react-native'
+import { View, Text, StyleSheet, FlatList, Pressable, } from 'react-native'
 import MealItem from "../components/MealItem";
 
 
@@ -37,10 +37,12 @@ function MealsOverviewScreen({ navigation, route }) {
     }
 
     return (
+        
         <View style={styles.container}>
+            
             <FlatList data={displayedMeals} keyExtractor={(item) => item.id} renderItem={renderMealItem}>
-
             </FlatList>
+            
         </View>
     )
 }
