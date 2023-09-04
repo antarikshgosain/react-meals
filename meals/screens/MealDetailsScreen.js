@@ -3,6 +3,7 @@ import { MEALS } from "../data/dummy-data";
 import MealDetails from "../components/MealDetails";
 import { useLayoutEffect } from 'react';
 import { getDateTime, getMessage }  from "../utils/Utility";
+import IconButton from "../components/IconButton";
 
 function MealDetailsScreen({route, navigation}) {
 
@@ -13,7 +14,7 @@ function MealDetailsScreen({route, navigation}) {
     useLayoutEffect( () => {
         navigation.setOptions({
             headerRight: () => {
-                return <Button title='fav me' onPress={headerButtonPressHandler}></Button>
+                return <IconButton icon="star" color="white" onPress={headerButtonPressHandler}/>
             }
         }, [navigation, headerButtonPressHandler] );
     });
