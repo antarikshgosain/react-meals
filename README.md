@@ -17,5 +17,11 @@ added new dependencies using
    npm install @react-navigation/native
    npx expo install react-native-safe-area-context
    npx expo install react-native-screens
+
+   --stack navigation
    npm install @react-navigation/native-stack
+
+   --drawer navigation
+   npm install @react-navigation/drawer
+   npx expo install react-native-gesture-handler
 ```
