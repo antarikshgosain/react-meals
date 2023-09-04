@@ -1,10 +1,23 @@
-import { View, Text, Image, StyleSheet, ScrollView } from "react-native";
+import { View, Text, Image, StyleSheet, ScrollView, Button } from "react-native";
 import { MEALS } from "../data/dummy-data";
 import MealDetails from "../components/MealDetails";
+import { useLayoutEffect } from 'react';
+import { getDateTime, getMessage }  from "../utils/Utility";
 
-function MealDetailsScreen({route}) {
+function MealDetailsScreen({route, navigation}) {
+
+    function headerButtonPressHandler() {
+        console.log( getDateTime()+ "MealDetailsScreen.headerButtonPressHandler() called");
+    }
+
+    useLayoutEffect( () => {
+        navigation.setOptions({
+            headerRight: () => {
+                return <Button title='fav me' onPress={headerButtonPressHandler}></Button>
+            }
+        }, [navigation, headerButtonPressHandler] );
+    });
     
-    console.log('Entered MealDetailsScreen');
     const mealId = route.params.mealId;
     const selectedMeal = MEALS.find((meal) => meal.id === mealId);
     
