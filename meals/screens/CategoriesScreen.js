@@ -11,6 +11,7 @@ function CategoriesScreen({navigation}) {
 
     function favoritesButtonPressedHandler() {
         console.log( getDateTimeMetadata()+ "CategoriesScreen.favoritesButtonHandler() called");
+        navigation.navigate('FavoritesScreen');
     };
 
     useLayoutEffect( () => {
