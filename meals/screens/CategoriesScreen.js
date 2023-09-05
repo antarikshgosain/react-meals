@@ -17,7 +17,7 @@ function CategoriesScreen({navigation}) {
     useLayoutEffect( () => {
         navigation.setOptions({
             headerLeft: () => {
-                return <IconButton icon="menu" color="white" onPress={favoritesButtonPressedHandler} />
+                return <IconButton icon="bookmarks-outline" color="white" onPress={favoritesButtonPressedHandler} />
             }
         }, [navigation] );
     });
