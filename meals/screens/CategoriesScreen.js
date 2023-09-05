@@ -2,12 +2,25 @@ import { FlatList } from "react-native";
 import CategoryGridTile from "../components/CategoryGridTile";
 import { CATEGORIES } from "../data/dummy-data";
 import MealsOverviewScreen from "./MealsOverviewScreen";
-
-
-
+import { useLayoutEffect } from 'react';
+import IconButton from "../components/IconButton";
+import { getDateTimeMetadata, getMessage }  from "../utils/Utility";
 
 
 function CategoriesScreen({navigation}) {
+
+    function favoritesButtonPressedHandler() {
+        console.log( getDateTimeMetadata()+ "CategoriesScreen.favoritesButtonHandler() called");
+    };
+
+    useLayoutEffect( () => {
+        navigation.setOptions({
+            headerLeft: () => {
+                return <IconButton icon="menu" color="white" onPress={favoritesButtonPressedHandler} />
+            }
+        }, [navigation] );
+    });
+
     function renderCategoryItem(itemData) {
         function pressHandler() {
             navigation.navigate('MealsOverview', { 

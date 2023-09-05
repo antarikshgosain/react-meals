@@ -2,13 +2,13 @@ import { View, Text, Image, StyleSheet, ScrollView, Button } from "react-native"
 import { MEALS } from "../data/dummy-data";
 import MealDetails from "../components/MealDetails";
 import { useLayoutEffect } from 'react';
-import { getDateTime, getMessage }  from "../utils/Utility";
+import { getDateTimeMetadata, getMessage }  from "../utils/Utility";
 import IconButton from "../components/IconButton";
 
 function MealDetailsScreen({route, navigation}) {
 
     function headerButtonPressHandler() {
-        console.log( getDateTime()+ "MealDetailsScreen.headerButtonPressHandler() called");
+        console.log( getDateTimeMetadata()+ "MealDetailsScreen.headerButtonPressHandler() called");
     }
 
     useLayoutEffect( () => {

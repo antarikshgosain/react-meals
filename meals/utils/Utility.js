@@ -1,6 +1,7 @@
+import { Platform } from 'react-native';
 
-export const getDateTime = () => {
-    return new Date().toLocaleString() +" : ";
+export const getDateTimeMetadata = () => {
+    return Platform.OS +" "+ new Date().toLocaleString() +" : ";
 };
 
 export const getMessage = () => {
