@@ -18,11 +18,13 @@ function FavoritesScreen() {
         ); 
     } else {
         return (
-            <React.Fragment>
+            //same as <></>
+            <React.Fragment>        
 
-            <Text style={[styles.title, styles.titleContainer]}>Favorite Meal(s)</Text>
-            <MealsList items={favoriteMeals}/>
-            </React.Fragment>
+                <Text style={[styles.title, styles.titleContainer]}>Favorite Meal(s)</Text>
+                <MealsList items={favoriteMeals}/>
+            </React.Fragment> 
+            // same as <></>
         );
     }
     
